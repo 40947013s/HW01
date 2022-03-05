@@ -3,10 +3,10 @@
 int mystrsplit(char ***ppList , int *pCounter , const char *pStr, const char *
 pSeparator)
 {
-    if(pStr == NULL || pSeparator == NULL) return -1; //無東西切割
+    if(pStr == NULL || strlen(pSeparator) == 0) return -1; //無東西切割
     char *copy = calloc(strlen(pStr)+1, sizeof(char)); 
     strncpy(copy, pStr, strlen(pStr)); //複製pStr
-    if( strlen(pSeparator) == 0) //分割符為NULL(視為" "")
+    if(pSeparator == NULL) //分割符為NULL(視為" ")
     {
         char *token = strtok(copy, " ");
         while(token != NULL)
