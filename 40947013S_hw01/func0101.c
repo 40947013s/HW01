@@ -40,7 +40,7 @@ int32_t change_type(char first, char second)
 {
     int32_t First = check_kind(first);
     int32_t Second = check_kind(second);
-    if(First >= 0 && Second >= 0)
+    if(First >= 0 && Second >= 0 && First <= 15 && Second <= 15)
     {        
         int32_t value = reverse_bits(First*16+Second);
         if(check_value(value)) return value;
